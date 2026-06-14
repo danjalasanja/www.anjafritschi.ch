@@ -1,0 +1,16 @@
+# Ignore the entire media folder containing project images/assets
+media/
+media-web/
+
+# System files (Generated automatically by your computer)
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE and Editor configurations (Cursor/VS Code)
+.vscode/
+.cursor/
+*.code-workspace
+
+# Optional: Ignore common log files if they pop up
+*.log

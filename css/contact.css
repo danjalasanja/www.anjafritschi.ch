@@ -1,0 +1,79 @@
+/* Full-screen CONTACT overlay, styled to match the burger menu (.nav-menu.open).
+   Opened by clicking "contact" in the menu; closed with the X, a click on the
+   backdrop, or the Escape key. Edit the links in the overlay markup near the
+   bottom of each .html page (search for "contact-overlay"). */
+
+.contact-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--almost-black, #252323);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease;
+}
+
+.contact-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.contact-overlay .contact-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 760px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.contact-overlay .contact-link {
+  max-width: 100%;
+  margin: 0 0 22px;
+  color: var(--white-smoke, #f5f1ed);
+  font-family: "Open Sans", sans-serif;
+  font-size: clamp(14px, 2.6vw, 32px);
+  line-height: 1.5;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.contact-overlay .contact-link:last-child {
+  margin-bottom: 0;
+}
+
+.contact-overlay .contact-link:hover {
+  opacity: 0.6;
+}
+
+.contact-overlay .contact-close {
+  position: absolute;
+  top: 22px;
+  right: 30px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white-smoke, #f5f1ed);
+  font-family: "Open Sans", sans-serif;
+  font-size: 36px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .contact-overlay .contact-link {
+    font-size: clamp(12px, 3.2vw, 18px);
+    letter-spacing: 1px;
+  }
+}
