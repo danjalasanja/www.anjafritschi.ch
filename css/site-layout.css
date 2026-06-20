@@ -77,19 +77,35 @@
 }
 
 /* Award badge overlay (Touriski) */
-.image-wrapper.has-badge {
+.image-wrapper.has-badge,
+.has-badge-cell {
   position: relative;
 }
 
-.image-wrapper.has-badge .award-badge {
+.image-wrapper.has-badge .award-badge,
+.has-badge-cell .award-badge {
   position: absolute;
-  right: 4%;
-  bottom: 4%;
-  width: clamp(48px, 16%, 130px);
-  height: auto;
+  right: 5%;
+  bottom: 5%;
+  height: auto !important;
   margin: 0;
   pointer-events: none;
   z-index: 3;
+}
+
+/* Homepage Touriski card: bigger badge */
+.image-wrapper.has-badge:not(.crop) .award-badge {
+  width: clamp(70px, 22%, 150px) !important;
+}
+
+/* Projects grid crop card: small badge */
+.image-wrapper.crop.has-badge .award-badge {
+  width: clamp(40px, 22%, 64px) !important;
+}
+
+/* Touriski detail page image badge */
+.has-badge-cell .award-badge {
+  width: clamp(64px, 14%, 150px) !important;
 }
 
 /* About page */
