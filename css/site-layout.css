@@ -76,36 +76,67 @@
   }
 }
 
-/* Award badge overlay (Touriski) */
-.image-wrapper.has-badge,
-.has-badge-cell {
+/* Z-Kubator badge — hyperlinked sticker that overlaps a project card image.
+   The badge is its OWN <a> (separate link from the project card), so it sits
+   in a relative .badge-host wrapper next to the card link, not inside it. */
+.badge-host {
   position: relative;
+  display: block;
 }
 
-.image-wrapper.has-badge .award-badge,
-.has-badge-cell .award-badge {
+.award-badge-link {
   position: absolute;
-  right: 5%;
-  bottom: 5%;
-  height: auto !important;
+  right: 3%;
+  bottom: 0;
+  transform: translateY(28%);
+  z-index: 4;
   margin: 0;
-  pointer-events: none;
-  z-index: 3;
+  line-height: 0;
 }
 
-/* Homepage Touriski card: bigger badge */
-.image-wrapper.has-badge:not(.crop) .award-badge {
-  width: clamp(70px, 22%, 150px) !important;
+.award-badge-link .award-badge {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
 }
 
-/* Projects grid crop card: small badge */
-.image-wrapper.crop.has-badge .award-badge {
-  width: clamp(40px, 22%, 64px) !important;
+/* Homepage highlighted card sticker */
+.award-badge-link.home {
+  width: clamp(64px, 18%, 110px);
 }
 
-/* Touriski detail page image badge */
-.has-badge-cell .award-badge {
-  width: clamp(64px, 14%, 150px) !important;
+/* Projects grid (crop) card sticker */
+.award-badge-link.grid {
+  width: clamp(72px, 30%, 120px);
+}
+
+/* Placeholder / template project detail pages */
+.project-detail {
+  width: 100%;
+}
+
+.project-nav {
+  display: flex;
+  gap: 32px;
+  margin-top: 48px;
+}
+
+/* Touriski detail page: sticker lives in the text column under a caption */
+.zk-caption {
+  margin-top: 28px;
+}
+
+.zk-sticker-link {
+  display: inline-block;
+  margin-top: 10px;
+  line-height: 0;
+}
+
+.zk-sticker {
+  display: block;
+  width: clamp(120px, 45%, 200px);
+  height: auto;
 }
 
 /* About page */
