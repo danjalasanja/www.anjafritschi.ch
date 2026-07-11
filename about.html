@@ -84,6 +84,18 @@
         text-decoration: underline !important;
         text-underline-offset: 3px;
       }
+
+      /* Underline the contact links (email + LinkedIn) in the contact block.
+         Pseudo-classes are needed to out-specify the reset rule above. */
+      .about-page .about-contact-block a,
+      .about-page .about-contact-block a:link,
+      .about-page .about-contact-block a:visited,
+      .about-page .about-contact-block a:hover,
+      .about-page .about-contact-block a:active,
+      .about-page .about-contact-block a:focus {
+        text-decoration: underline !important;
+        text-underline-offset: 3px;
+      }
     </style>
     <link rel="canonical" href="https://www.anjafritschi.ch/about.html" />
     <meta name="description" content="Anja Fritschi: freelance interaction designer and co-founder of Touriski. Background in architectural draughting and a BA in Interaction Design at ZHdK." />

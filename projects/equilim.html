@@ -23,18 +23,18 @@
     <link href="../fonts/opensans.css" rel="stylesheet" type="text/css" />
     <link href="../css/site-layout.css" rel="stylesheet" type="text/css" />
     <link rel="canonical" href="https://www.anjafritschi.ch/projects/equilim.html" />
-    <meta name="description" content="Equilim – a Parkinson recovery monitoring interface by Anja Fritschi." />
+    <meta name="description" content="Equilim – a wearable, real-time motion-stability monitor for recovery after Deep Brain Stimulation, by Anja Fritschi." />
     <meta name="robots" content="index, follow" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.anjafritschi.ch/projects/equilim.html" />
     <meta property="og:title" content="Equilim – Anja Fritschi | Interaction Designer" />
-    <meta property="og:description" content="Equilim – a Parkinson recovery monitoring interface by Anja Fritschi." />
-    <meta property="og:image" content="https://www.anjafritschi.ch/media-web/shared/webclip_anja.png" />
+    <meta property="og:description" content="A wearable, real-time motion-stability monitor for recovery after Deep Brain Stimulation." />
+    <meta property="og:image" content="https://www.anjafritschi.ch/media-web/equilim/eq_hero.webp" />
     <meta property="og:site_name" content="Anja Fritschi" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Equilim – Anja Fritschi | Interaction Designer" />
-    <meta name="twitter:description" content="Equilim – a Parkinson recovery monitoring interface by Anja Fritschi." />
-    <meta name="twitter:image" content="https://www.anjafritschi.ch/media-web/shared/webclip_anja.png" />
+    <meta name="twitter:description" content="A wearable, real-time motion-stability monitor for recovery after Deep Brain Stimulation." />
+    <meta name="twitter:image" content="https://www.anjafritschi.ch/media-web/equilim/eq_hero.webp" />
   </head>
   <body class="body">
     <div
@@ -89,19 +89,373 @@
       <div class="container">
         <div class="content-wrapper">
           <div class="project-detail">
-            <div class="w-layout-blockcontainer containersticky w-container">
-              <h1 class="heading-h1">equilim</h1>
-              <p class="introduction">A Parkinson recovery monitoring interface.</p>
+            <!-- Intro (left, sticky) + prototype video (right) -->
+            <div class="eq-row">
+              <div class="eq-text">
+                <h1 class="heading-h1">equilim</h1>
+                <p class="introduction">
+                  A wearable, real-time motion-stability monitor for recovery after Deep Brain Stimulation.
+                </p>
+                <div class="eq-meta">
+                  <p><span class="eq-meta-label">Year</span> — 2026</p>
+                  <p>
+                    <span class="eq-meta-label">Context</span> — Self-initiated, an evolution of “Parkinson’s Motion
+                    Monitor” (2025)
+                  </p>
+                  <p><span class="eq-meta-label">Team</span> — Solo: design + engineering, with AI-assisted coding</p>
+                  <p>
+                    <span class="eq-meta-label">Type</span> — Interaction Design · Physical Computing · UX/UI (hardware +
+                    software)
+                  </p>
+                </div>
+              </div>
+              <div class="eq-media">
+                <div class="eq-video">
+                  <iframe
+                    src="https://www.youtube.com/embed/LOqi8Cy0-yk"
+                    title="Equilim prototype demo"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              </div>
             </div>
-            <img
-              src="../media-web/placeholder.svg"
-              loading="lazy"
-              alt="Placeholder — project visuals coming soon"
-              style="width: 100%; height: auto; display: block; margin-top: 32px"
-            />
+
+            <!-- Short description (left, sticky) + hero & impressions images (right) -->
+            <div class="eq-row">
+              <div class="eq-text">
+                <p class="introduction">Short description</p>
+                <p class="paragraph">
+                  Parkinson’s patients who undergo DBS need to see whether the surgery is helping, and their clinicians
+                  need objective data on how motor stability changes before and after the operation. Equilim turns a
+                  small wearable sensor and an iPhone into a home measurement tool. Each day the patient holds the sensor
+                  still for thirty seconds; on-device signal processing turns that into a single 0–100 stability score.
+                  The patient sees a calm, encouraging view that is built to never discourage, while the clinician opens a
+                  separate dashboard with the full picture: raw waveforms, a before-and-after comparison around the
+                  surgery date, a day-by-day calendar, automatic detection of invalid tests, and the ability to flag a
+                  test with a note delivered straight back to the patient.
+                </p>
+              </div>
+              <div class="eq-media">
+                <img
+                  src="../media-web/equilim/eq_hero.webp"
+                  loading="lazy"
+                  alt="The Equilim wearable sensor on a hand wrap next to the patient app on an iPhone"
+                />
+                <img
+                  class="eq-space-lg"
+                  src="../media-web/equilim/eq_home_sensor.webp"
+                  loading="lazy"
+                  alt="The patient Home screen next to the body-worn sensor"
+                />
+              </div>
+            </div>
+
+            <!-- Tech stack -->
+            <div class="eq-row">
+              <div class="eq-text">
+                <p class="introduction">Tech stack</p>
+                <p class="paragraph">
+                  An ESP32-S sensor with an IMU streams motion over BLE to a SwiftUI iPhone app. A Supabase backend
+                  (Postgres with row-level security and auth) sits between the app and a Next.js web dashboard, joined by
+                  two fixed data contracts.
+                </p>
+              </div>
+              <div class="eq-media">
+                <figure class="eq-fig">
+                  <img
+                    src="../media-web/equilim/eq_architecture.webp"
+                    loading="lazy"
+                    alt="System architecture diagram: sensor, phone, backend and dashboard"
+                  />
+                </figure>
+                <figure class="eq-fig">
+                  <img
+                    src="../media-web/equilim/eq_clinician_dashboard.webp"
+                    loading="lazy"
+                    alt="The Equilim clinician dashboard on a desktop monitor"
+                  />
+                </figure>
+                <div class="eq-shots cols-2">
+                  <figure class="eq-fig">
+                    <img
+                      src="../media-web/equilim/eq_sensor_wrap.webp"
+                      loading="lazy"
+                      alt="The sensor mounted on its hand wrap"
+                    />
+                  </figure>
+                  <figure class="eq-fig">
+                    <img
+                      src="../media-web/equilim/eq_sensor_screen.webp"
+                      loading="lazy"
+                      alt="Close-up of the sensor’s own screen"
+                    />
+                  </figure>
+                </div>
+              </div>
+            </div>
+
+            <!-- Patient side -->
+            <div class="eq-row">
+              <div class="eq-text">
+                <p class="introduction">Designing the patient side as a calm ritual</p>
+                <p class="paragraph">
+                  The hardest design constraint here was emotional, not technical. Someone measuring their own recovery
+                  every day is fragile to discouragement, so the patient app is built so that it structurally cannot
+                  discourage. Every line of patient-facing text passes through a single module that can only phrase things
+                  supportively, so a dip becomes “Recovery has ups and downs, completing today’s test is a win.” The
+                  colour system is all blue, never red, so the lowest band reads as calm rather than as failure. The whole
+                  interaction is built for unsure, older hands: one large button on the Home screen instead of hidden in a
+                  tab, generous spacing, big type, and headers that stay in place so nothing jitters between screens. When
+                  the clinician leaves a note it surfaces here too, and a request to retake the test appears as a clear,
+                  dismissable card.
+                </p>
+              </div>
+              <div class="eq-media">
+                <div class="eq-shots cols-2">
+                  <figure class="eq-fig">
+                    <img src="../media-web/equilim/eq_home.webp" loading="lazy" alt="Patient app Home screen" />
+                  </figure>
+                  <figure class="eq-fig">
+                    <img src="../media-web/equilim/eq_process.webp" loading="lazy" alt="Patient app Progress screen" />
+                  </figure>
+                  <figure class="eq-fig">
+                    <img src="../media-web/equilim/eq_settings.webp" loading="lazy" alt="Patient app Settings screen" />
+                  </figure>
+                  <figure class="eq-fig">
+                    <img
+                      src="../media-web/equilim/eq_notification.webp"
+                      loading="lazy"
+                      alt="Notification asking the patient to redo the test"
+                    />
+                  </figure>
+                </div>
+              </div>
+            </div>
+
+            <!-- Thirty seconds -->
+            <div class="eq-row">
+              <div class="eq-text">
+                <p class="introduction">Thirty seconds</p>
+                <p class="paragraph">
+                  The test itself is a water orb that slowly fills over thirty seconds with no live number at all, because
+                  watching a score climb in real time would turn a measurement into a performance and add pressure. A ring
+                  around the orb reacts gently to movement, so it still feels alive without judging. When the test ends,
+                  the screen blooms into a soft blue glow with a short, personal thank-you while the data is analysed in
+                  the background. The reward is warmth, not a verdict.
+                </p>
+              </div>
+              <div class="eq-media">
+                <div class="eq-shots cols-3">
+                  <figure class="eq-fig">
+                    <img src="../media-web/equilim/eq_test_begin.webp" loading="lazy" alt="The daily test begins" />
+                  </figure>
+                  <figure class="eq-fig">
+                    <img
+                      src="../media-web/equilim/eq_test_fill.webp"
+                      loading="lazy"
+                      alt="The orb fills over thirty seconds"
+                    />
+                  </figure>
+                  <figure class="eq-fig">
+                    <img
+                      src="../media-web/equilim/eq_test_finish.webp"
+                      loading="lazy"
+                      alt="The finish: a warm glow and a personal thank-you"
+                    />
+                  </figure>
+                </div>
+              </div>
+            </div>
+
+            <!-- Clinician's view -->
+            <div class="eq-row">
+              <div class="eq-text">
+                <p class="introduction">The clinician’s view</p>
+                <p class="paragraph">
+                  The clinician dashboard is the opposite of the patient app on purpose. Where the patient sees calm and
+                  encouragement, the clinician sees everything: the average stability before and after surgery and the
+                  change between them, a day-by-day trend with the operation marked on it, an adherence figure, and a full
+                  calendar anchored on the DBS date. Selecting a day reveals its score, band and number of sessions. The
+                  colour language here is clinical, with red, amber and green, and the whole surface follows the
+                  clinician’s own light or dark system setting. It is a tool for reading an outcome over weeks, not a
+                  daily nudge.
+                </p>
+              </div>
+              <div class="eq-media">
+                <figure class="eq-fig">
+                  <img
+                    src="../media-web/equilim/eq_clinician_overview.webp"
+                    loading="lazy"
+                    alt="Clinician overview: before and after the operation, adherence, trend and calendar"
+                  />
+                </figure>
+                <figure class="eq-fig">
+                  <img
+                    src="../media-web/equilim/eq_day_select.webp"
+                    loading="lazy"
+                    alt="Selecting a day, with the DBS surgery day called out"
+                  />
+                </figure>
+              </div>
+            </div>
+
+            <!-- Turning noise into a message -->
+            <div class="eq-row">
+              <div class="eq-text">
+                <p class="introduction">Turning noise into a message</p>
+                <p class="paragraph">
+                  A single test can be ruined by one large movement, for example lifting the hand, which would otherwise
+                  read as a misleadingly high score. Equilim detects that automatically and warns the clinician where in
+                  the recording it happened, turning a noisy line into an actionable signal. The clinician can then flag
+                  the test, write a short note, and optionally request a retake. That message travels straight back to the
+                  patient: the note appears on their Home screen, the affected day is marked on their calendar, and if a
+                  retake was requested they get a clear button to redo the test. Once they do, the request quietly
+                  resolves itself on both sides. This is the loop that makes the data trustworthy and keeps the patient in
+                  gentle contact with their care team.
+                </p>
+              </div>
+              <div class="eq-media">
+                <figure class="eq-fig">
+                  <img
+                    src="../media-web/equilim/eq_waveform.webp"
+                    loading="lazy"
+                    alt="Clinician inspecting the raw waveform with the automatic artifact warning"
+                  />
+                </figure>
+                <div class="eq-shots cols-2">
+                  <figure class="eq-fig">
+                    <img
+                      src="../media-web/equilim/eq_flag.webp"
+                      loading="lazy"
+                      alt="Flagging the test with a note and a retake request"
+                    />
+                  </figure>
+                  <figure class="eq-fig">
+                    <img
+                      src="../media-web/equilim/eq_retake.webp"
+                      loading="lazy"
+                      alt="The retake request delivered on the patient Home screen"
+                    />
+                  </figure>
+                </div>
+              </div>
+            </div>
+
+            <!-- Version 01 / process -->
+            <div class="eq-row">
+              <div class="eq-text">
+                <p class="introduction">Version 01 — the origin</p>
+                <p class="paragraph">
+                  Equilim grew out of Parkinson’s Motion Monitor, a 2025 browser prototype. A sensor streamed raw motion
+                  (acceleration, gyroscope, orientation) over the network to a web page that rendered it as a 3D cube,
+                  which turned pink and shook to show tremor, next to a live stability test and a progress calendar. It
+                  proved the idea that everyday motion could become a picture of recovery, but it was raw and technical:
+                  one screen for everyone, exposed telemetry, no backend or privacy, and no split between what a patient
+                  needs and what a clinician needs.
+                </p>
+                <p class="paragraph">
+                  The rebuild split it into a calm patient app and a clinician dashboard on a real, privacy-scoped
+                  backend, turned the shaking cube into one gentle score and a recovery calendar, and made every
+                  patient-facing word encourage, never alarm. Parkinson’s Motion Monitor became Equilim.
+                </p>
+              </div>
+              <div class="eq-media">
+                <div class="eq-video">
+                  <iframe
+                    src="https://www.youtube.com/embed/GwqpYwUci44"
+                    title="Parkinson’s Motion Monitor — Version 01 prototype"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                <div class="eq-shots cols-2">
+                  <figure class="eq-fig">
+                    <img
+                      src="../media-web/equilim/eq_v1_stability.webp"
+                      loading="lazy"
+                      alt="Version 01: 15-second stability test"
+                    />
+                  </figure>
+                  <figure class="eq-fig">
+                    <img
+                      src="../media-web/equilim/eq_v1_dashboard.webp"
+                      loading="lazy"
+                      alt="Version 01: clinician dashboard"
+                    />
+                  </figure>
+                  <figure class="eq-fig">
+                    <img
+                      src="../media-web/equilim/eq_v1_cube_live.webp"
+                      loading="lazy"
+                      alt="Version 01: live interaction with the cube during the test"
+                    />
+                  </figure>
+                  <figure class="eq-fig">
+                    <img
+                      src="../media-web/equilim/eq_v1_dataprotocol.webp"
+                      loading="lazy"
+                      alt="Version 01: raw data protocol"
+                    />
+                  </figure>
+                  <figure class="eq-fig">
+                    <img
+                      src="../media-web/equilim/eq_v1_cube_blue.webp"
+                      loading="lazy"
+                      alt="Version 01: blue cube, no tremor"
+                    />
+                  </figure>
+                  <figure class="eq-fig">
+                    <img
+                      src="../media-web/equilim/eq_v1_cube_pink.webp"
+                      loading="lazy"
+                      alt="Version 01: pink cube visualising tremor"
+                    />
+                  </figure>
+                </div>
+              </div>
+            </div>
+
+            <!-- Conclusion -->
+            <div class="eq-row">
+              <div class="eq-text">
+                <p class="introduction">Conclusion</p>
+                <p class="paragraph">
+                  The iteration rethought all of that. The one technical screen became two purpose-built products: a calm,
+                  encouraging patient app on the phone and a detailed clinician dashboard on the web. The raw 3D cube
+                  became a single, gentle stability score and a recovery calendar anchored on the surgery date. A real
+                  backend was added with proper access control, so a patient only sees their own data and a clinician only
+                  sees patients who have consented. The sensor became a self-contained wearable with its own screen, and
+                  the experience was rebuilt around the people who use it, with positive-only language, a never-red
+                  palette, and a clinician-to-patient feedback loop. The rename from Parkinson’s Motion Monitor to Equilim
+                  reflects that shift, from a clinical instrument named after a disease to a calmer companion named for
+                  balance.
+                </p>
+              </div>
+              <div class="eq-media">
+                <figure class="eq-fig">
+                  <img
+                    src="../media-web/equilim/eq_clinician_room.webp"
+                    loading="lazy"
+                    alt="The clinician dashboard shown on a monitor in a clinical room"
+                  />
+                </figure>
+              </div>
+            </div>
+
+            <p class="eq-cap" style="margin-top: 48px">
+              Transparency statement: some images were enhanced using AI systems for presentation purposes.
+            </p>
+
+            <!-- Reusable project navigation (previous / next) -->
             <div class="project-nav">
-              <a href="../index.html" data-w-id="f0a7a71a-4ced-4229-85c5-70b003d4cdee" class="button w-button">←Home</a
-              ><a href="skischool.html" data-w-id="e765e968-3d04-fd7c-3e5a-f76b7848c5f0" class="button w-button">Next →</a>
+              <a href="soundofsocks.html" data-w-id="f0a7a71a-4ced-4229-85c5-70b003d4cdee" class="button w-button"
+                >← previous</a
+              ><a href="skischool.html" data-w-id="e765e968-3d04-fd7c-3e5a-f76b7848c5f0" class="button w-button"
+                >Next →</a
+              >
             </div>
           </div>
         </div>
