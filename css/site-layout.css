@@ -225,17 +225,22 @@ a[href^="mailto:"] {
   margin-top: 28px;
 }
 
-/* Match the intro/ZVV style: uppercase, letter-spaced, single colour. */
-.eq-meta p {
-  margin: 0 0 14px;
+/* Match the intro/ZVV style: uppercase, letter-spaced, single colour.
+   Each item is a small heading (label) with its value stacked underneath. */
+.eq-meta-item {
+  margin-bottom: 18px;
+}
+
+.eq-meta-item p {
+  margin: 0;
   text-transform: uppercase;
   letter-spacing: 5px;
-  line-height: 1.7;
+  line-height: 1.6;
   color: #252323;
 }
 
-.eq-meta .eq-meta-label {
-  color: #252323;
+.eq-meta-label {
+  margin-bottom: 2px !important;
 }
 
 /* Large ZVV-style whitespace between stacked images in a media column. */
