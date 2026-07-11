@@ -1,0 +1,10 @@
+{
+  // Cloudflare Worker that serves this static site on anjafritschi.ch / www.anjafritschi.ch.
+  // The custom domains are already bound to this Worker name; redeploying keeps them attached.
+  // Deploy with:  CLOUDFLARE_ACCOUNT_ID=<account-id> npx wrangler deploy
+  "name": "portfolio-anja",
+  "compatibility_date": "2026-04-19",
+  "assets": {
+    "directory": "."
+  }
+}

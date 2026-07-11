@@ -59,10 +59,29 @@
 
 | File | Origin | Notes |
 | --- | --- | --- |
-| `_headers` | **[NEW]** | Cloudflare Pages headers (cache + security). |
+| `_headers` | **[NEW]** | Cloudflare headers (cache + security). |
 | `robots.txt` | **[NEW]** | Crawl rules + sitemap pointer. |
 | `sitemap.xml` | **[NEW]** | Generated to match the page list. |
-| `.gitignore` | **[NEW]** | Ignores `media/`, `.DS_Store`, `archive/`, IDE folders. |
+| `.gitignore` | **[NEW]** | Ignores `media/`, `.DS_Store`, `archive/`, IDE folders, `.wrangler/`. |
+| `wrangler.jsonc` | **[NEW]** | Cloudflare Worker config that serves this folder as static assets. |
+| `.assetsignore` | **[NEW]** | Excludes `media/`, `.git`, `archive`, docs, etc. from the Worker upload. |
+
+### How the live site is served (IMPORTANT)
+
+The domain **anjafritschi.ch / www.anjafritschi.ch** is served by a **Cloudflare Worker
+named `portfolio-anja`** (Static Assets), in the Cloudflare account owned by
+`anfrjaitschi@gmail.com`. The custom domains are bound to that Worker.
+
+- GitHub (`danjalasanja/www.anjafritschi.ch`, branch `main`) is the source of truth.
+  GitHub Pages also builds it, but the **domain does not use GitHub Pages** — it uses the Worker.
+- **To publish changes to the live domain**, from the repo root:
+
+  ```sh
+  CLOUDFLARE_ACCOUNT_ID=1f3a2ea90c7354a18be7c719df62145a npx wrangler deploy
+  ```
+
+  (Run `npx wrangler login` first with the `anfrjaitschi@gmail.com` account.)
+- A plain `git push` alone does **not** update the domain — you must also run `wrangler deploy`.
 
 ### Assets
 

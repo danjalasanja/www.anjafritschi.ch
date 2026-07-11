@@ -9,3 +9,6 @@ desktop.ini
 .cursor/
 # Archived old/unused files
 archive/
+
+# Wrangler (Cloudflare) local cache
+.wrangler/

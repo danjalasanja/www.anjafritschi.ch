@@ -1,0 +1,12 @@
+.git
+.wrangler
+node_modules
+.cursor
+media
+archive
+.DS_Store
+**/.DS_Store
+.gitignore
+.assetsignore
+wrangler.jsonc
+CODEBASE.md
